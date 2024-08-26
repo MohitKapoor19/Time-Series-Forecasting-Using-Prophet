@@ -1,0 +1,20 @@
+
+    The function `show_application_page()` in the Streamlit app sets up the user interface for
+    generating time series forecasts using the Prophet library, allowing users to upload data, configure
+    forecasting parameters, visualize results, evaluate model performance, and export forecast results.
+    
+    :param df: `df` is a pandas DataFrame that contains the time series data after it has been loaded
+    and prepared for forecasting. It includes the date column labeled as 'ds' and the values column
+    labeled as 'y'
+    :param date_col: The `date_col` parameter is used to specify the column in your dataset that
+    contains the date or timestamp information. This column will be renamed as **ds** to comply with
+    Prophet's requirements for time series forecasting. It is essential for creating time series
+    forecasts based on historical data
+    :param metric_col: The `metric_col` parameter refers to the column in your dataset that contains the
+    values you want to forecast. This column should be numeric as it represents the metric or
+    measurement you are interested in predicting. When preparing the data for forecasting, this column
+    will be labeled as **y** to comply with Prophet
+    :return: The code provided defines a Streamlit web application for time series forecasting using the
+    Prophet library. The application consists of multiple sections including data loading, parameter
+    configuration, forecasting, model validation, hyperparameter tuning, and exporting results.
+    """
