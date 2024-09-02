@@ -9,6 +9,14 @@ print("Attempting to install Prophet...")
 install_prophet()
 print("Prophet installation attempt completed.")
 
+def downgrade_numpy():
+    print("Attempting to downgrade NumPy...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy<2.0"])
+    print("NumPy downgrade attempt completed.")
+
+# Call the function to downgrade NumPy
+downgrade_numpy()
+
 
 try:
     from prophet import Prophet
