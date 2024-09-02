@@ -1,39 +1,25 @@
-import subprocess
 import sys
 import warnings
 
-def install_prophet():
-    print("Attempting to install Prophet...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "prophet"])
-    print("Prophet installation attempt completed.")
-
-def downgrade_numpy():
-    print("Attempting to downgrade NumPy...")
-    try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy<2.0"])
-        print("NumPy downgrade attempt completed.")
-    except subprocess.CalledProcessError:
-        print("Failed to downgrade NumPy. Attempting to patch Prophet instead.")
-        patch_prophet()
+def patch_numpy():
+    print("Attempting to patch NumPy...")
+    import numpy as np
+    if not hasattr(np, 'float_'):
+        np.float_ = np.float64
+    print("NumPy patch attempt completed.")
 
 def patch_prophet():
-    try:
-        import numpy as np
-        import prophet.forecaster
+    print("Attempting to patch Prophet...")
+    import prophet.forecaster
+    import numpy as np
+    prophet.forecaster.np.float_ = np.float64
+    print("Prophet patch attempt completed.")
 
-        # Replace np.float_ with np.float64
-        prophet.forecaster.np.float_ = np.float64
+# Patch NumPy first
+patch_numpy()
 
-        print("Successfully patched Prophet to work with NumPy 2.0+")
-    except Exception as e:
-        print(f"Failed to patch Prophet: {e}")
-        raise
-
-# Attempt to install Prophet
-install_prophet()
-
-# Attempt to downgrade NumPy or patch Prophet
-downgrade_numpy()
+# Then patch Prophet
+patch_prophet()
 
 # Now try to import Prophet
 try:
@@ -50,6 +36,7 @@ except ImportError as e:
 # Suppress warnings
 warnings.filterwarnings("ignore")
 
+# Rest of your imports
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -65,8 +52,6 @@ import concurrent.futures
 import time
 
 
-
-warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="Forecast App", page_icon="🔮", layout="wide")
 
