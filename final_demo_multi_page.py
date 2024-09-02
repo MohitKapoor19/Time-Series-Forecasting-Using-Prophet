@@ -1,5 +1,11 @@
 import sys
 import warnings
+import subprocess
+
+def install_package(package):
+    print(f"Attempting to install {package}...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    print(f"{package} installation attempt completed.")
 
 def patch_numpy():
     print("Attempting to patch NumPy...")
@@ -44,12 +50,22 @@ import itertools
 import json
 import holidays
 import altair as alt
-import plotly.graph_objs as go
-import plotly.figure_factory as ff
+
+# Try to import plotly, install if not found
+try:
+    import plotly.graph_objs as go
+    import plotly.figure_factory as ff
+except ImportError:
+    print("Plotly not found. Attempting to install...")
+    install_package("plotly")
+    import plotly.graph_objs as go
+    import plotly.figure_factory as ff
+
 import base64
 from datetime import datetime
 import concurrent.futures
 import time
+
 
 
 
