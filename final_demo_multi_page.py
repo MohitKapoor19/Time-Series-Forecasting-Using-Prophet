@@ -1,3 +1,25 @@
+import subprocess
+import sys
+
+def install_prophet():
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "prophet"])
+
+# Directly call the function to install Prophet
+print("Attempting to install Prophet...")
+install_prophet()
+print("Prophet installation attempt completed.")
+
+
+try:
+    from prophet import Prophet
+    from prophet.plot import add_changepoints_to_plot
+    from prophet.diagnostics import cross_validation, performance_metrics
+    from prophet.plot import plot_cross_validation_metric
+    from prophet.serialize import model_to_json, model_from_json
+    print("Prophet successfully imported.")
+except ImportError as e:
+    print(f"Failed to import Prophet. Error: {e}")
+
 import streamlit as st
 import pandas as pd
 import numpy as np
