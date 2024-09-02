@@ -1,23 +1,41 @@
 import subprocess
 import sys
+import warnings
 
 def install_prophet():
+    print("Attempting to install Prophet...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", "prophet"])
-
-# Directly call the function to install Prophet
-print("Attempting to install Prophet...")
-install_prophet()
-print("Prophet installation attempt completed.")
+    print("Prophet installation attempt completed.")
 
 def downgrade_numpy():
     print("Attempting to downgrade NumPy...")
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy<2.0"])
-    print("NumPy downgrade attempt completed.")
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy<2.0"])
+        print("NumPy downgrade attempt completed.")
+    except subprocess.CalledProcessError:
+        print("Failed to downgrade NumPy. Attempting to patch Prophet instead.")
+        patch_prophet()
 
-# Call the function to downgrade NumPy
+def patch_prophet():
+    try:
+        import numpy as np
+        import prophet.forecaster
+
+        # Replace np.float_ with np.float64
+        prophet.forecaster.np.float_ = np.float64
+
+        print("Successfully patched Prophet to work with NumPy 2.0+")
+    except Exception as e:
+        print(f"Failed to patch Prophet: {e}")
+        raise
+
+# Attempt to install Prophet
+install_prophet()
+
+# Attempt to downgrade NumPy or patch Prophet
 downgrade_numpy()
 
-
+# Now try to import Prophet
 try:
     from prophet import Prophet
     from prophet.plot import add_changepoints_to_plot
@@ -27,17 +45,16 @@ try:
     print("Prophet successfully imported.")
 except ImportError as e:
     print(f"Failed to import Prophet. Error: {e}")
+    sys.exit(1)
+
+# Suppress warnings
+warnings.filterwarnings("ignore")
 
 import streamlit as st
 import pandas as pd
 import numpy as np
 import itertools
-from prophet import Prophet
-from prophet.plot import add_changepoints_to_plot
-from prophet.diagnostics import cross_validation, performance_metrics
-from prophet.plot import plot_cross_validation_metric
 import json
-from prophet.serialize import model_to_json, model_from_json
 import holidays
 import altair as alt
 import plotly.graph_objs as go
@@ -46,7 +63,8 @@ import base64
 from datetime import datetime
 import concurrent.futures
 import time
-import warnings
+
+
 
 warnings.filterwarnings("ignore")
 
