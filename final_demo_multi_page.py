@@ -1,3 +1,15 @@
+# Install Plotly
+import sys
+import subprocess
+
+def install_plotly():
+    print("Attempting to install Plotly...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly"])
+    print("Plotly installation attempt completed.")
+
+# Run the installation
+install_plotly()
+
 import sys
 import warnings
 
@@ -45,7 +57,7 @@ import json
 import holidays
 import altair as alt
 
-# Import Plotly without installation attempt
+# Import Plotly
 import plotly.graph_objs as go
 import plotly.figure_factory as ff
 
@@ -53,6 +65,10 @@ import base64
 from datetime import datetime
 import concurrent.futures
 import time
+
+
+
+
 
 
 
