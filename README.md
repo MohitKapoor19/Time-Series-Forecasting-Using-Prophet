@@ -12,9 +12,6 @@ This repository contains a **Forecast Application** built using **Streamlit**, *
   - [Step 4: Model Evaluation](#step-4-model-evaluation)
   - [Step 5: Hyperparameter Tuning](#step-5-hyperparameter-tuning)
   - [Step 6: Export Results](#step-6-export-results)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
