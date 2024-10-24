@@ -2,7 +2,7 @@
 
 The **Forecast Application** is a versatile tool that simplifies the process of predicting future trends based on historical time series data. With an intuitive interface and powerful underlying technology, it makes forecasting accessible to both beginners and experienced users alike.
 
-Built with **Streamlit**, **Prophet**, and **Plotly**, this app enables you to easily upload your data, configure forecasting parameters, and visualize the results—all in a matter of minutes. Whether you're analyzing sales data, weather patterns, or any other time series, the Forecast Application helps you generate accurate predictions with minimal effort.
+Built with **Streamlit**, **Prophet**, and **Plotly**, this app enables you to easily upload your data, configure forecasting parameters, and visualize the results in a matter of minutes. Whether you're analyzing sales data, weather patterns, or any other time series, the Forecast Application helps you generate accurate predictions with minimal effort.
 
 
 ## Features
