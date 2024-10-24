@@ -1,6 +1,6 @@
 # Forecast Application 
 A powerful tool designed to help you predict future values based on historical time series data,this app makes time series forecasting accessible and user-friendly.
-This repository contains a **Forecast Application** built using **Streamlit**, **Prophet**, **Plotly**, and other powerful Python libraries. This app allows users to generate future forecasts based on historical time series data.
+This repository contains a **Forecast Application** built using **Streamlit**, **Prophet** and  **Plotly**. This app allows users to generate future forecasts based on historical time series data.
 
 ## Table of Contents
 - [Features](#features)
