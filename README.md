@@ -4,7 +4,7 @@ This repository contains a **Forecast Application** built using **Streamlit**, *
 
 ## Table of Contents
 - [Features](#features)
-- [Installation](#installation)
+- [Installation](#Installation and Demo)
 - [Usage](#usage)
   - [Step 1: Data Loading](#step-1-data-loading)
   - [Step 2: Parameter Configuration](#step-2-parameter-configuration)
