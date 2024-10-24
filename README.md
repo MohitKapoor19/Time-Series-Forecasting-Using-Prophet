@@ -50,6 +50,21 @@ If you'd like to run this application locally, follow the instructions below.
 
 
 
+#### AxiosError: Request failed with status code 403
+
+If you encounter a **403 AxiosError** during CSV upload, this is a known issue related to **Cross-Origin Resource Sharing (CORS)** policies. This issue often occurs when deploying the app on certain platforms, such as **Hugging Face Spaces**.
+
+The app runs without issues in local environments, but CORS policies on remote servers can block certain actions, like file uploads. 
+
+**What does this mean?**
+- **CORS** is a security feature in web browsers that restricts web applications from making requests to a domain different from the one that served the web page. In this case, it can prevent the app from accepting uploads from certain sources.
+
+**What have I done to address this?**
+- Locally, this issue doesn't arise, but for deployment, I disabled CORS within the application. Unfortunately, some hosting platforms like Hugging Face may still enforce stricter policies.
+
+The app will demonstrate its full capabilities without any issues when running locally.
+
+
 
 
 
