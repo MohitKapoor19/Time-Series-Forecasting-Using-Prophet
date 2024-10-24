@@ -40,8 +40,7 @@ Make sure you have Python 3.x installed on your machine.
 ```bash
 git clone https://github.com/your-username/forecast-app.git
 cd forecast-app
-
-
+```
 
 
 ## Usage
