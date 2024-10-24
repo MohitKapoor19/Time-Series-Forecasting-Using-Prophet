@@ -37,7 +37,7 @@ The Forecast App utilizes the **Prophet** forecasting system, developed by Faceb
 6. Export the results for further analysis
 
 
-## Installation 
+## Installation
 
 You can view a live demo of this application on **Hugging Face Spaces** without setting it up locally:
 
