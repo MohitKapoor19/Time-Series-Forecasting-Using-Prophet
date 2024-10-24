@@ -1,20 +1,8 @@
-# Forecast Application 
-A powerful tool designed to help you predict future values based on historical time series data,this app makes time series forecasting accessible and user-friendly.
-This repository contains a **Forecast Application** built using **Streamlit**, **Prophet** and  **Plotly**. This app allows users to generate future forecasts based on historical time series data.
+# Forecast Application
 
-## Table of Contents
-- [Features](#features)
-- [Installation](##installation)
-- [Usage](#usage)
-  - [Step 1: Data Loading](#step-1-data-loading)
-  - [Step 2: Parameter Configuration](#step-2-parameter-configuration)
-  - [Step 3: Model Fitting and Forecasting](#step-3-model-fitting-and-forecasting)
-  - [Step 4: Model Evaluation](#step-4-model-evaluation)
-  - [Step 5: Hyperparameter Tuning](#step-5-hyperparameter-tuning)
-  - [Step 6: Export Results](#step-6-export-results)
-- [Demo Issues](#Demo-issues)
+A powerful tool designed to help you predict future values based on historical time series data. This app makes time series forecasting accessible and user-friendly.
 
----
+This repository contains a **Forecast Application** built using **Streamlit**, **Prophet**, and **Plotly**. The app allows users to generate future forecasts based on historical time series data.
 
 ## Features
 
@@ -29,13 +17,12 @@ This repository contains a **Forecast Application** built using **Streamlit**, *
 
 The Forecast App utilizes the **Prophet** forecasting system, developed by Facebook's Core Data Science team. Here's what you can do:
 
-1. Upload your time series data
-2. Configure various forecasting parameters
-3. Generate predictions for future time periods
-4. Visualize the results
-5. Evaluate the model's performance
-6. Export the results for further analysis
-
+1. Upload your time series data.
+2. Configure various forecasting parameters.
+3. Generate predictions for future time periods.
+4. Visualize the results.
+5. Evaluate the model's performance.
+6. Export the results for further analysis.
 
 ## Installation
 
