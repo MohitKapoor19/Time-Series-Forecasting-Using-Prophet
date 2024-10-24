@@ -77,7 +77,7 @@ Ensure you have **Docker** installed on your machine. If not, you can download a
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/forecast-app.git
+git clone https://github.com/MohitKapoor19/forecast_test.git
 cd forecast-app
 docker build -t forecast-app
 docker run -p 7860:7860 forecast-app
