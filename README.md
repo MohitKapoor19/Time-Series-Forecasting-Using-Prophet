@@ -25,6 +25,18 @@ This repository contains a **Forecast Application** built using **Streamlit**, *
 - **Hyperparameter Tuning**: Automatically optimize model parameters for better accuracy.
 - **Export Capabilities**: Export the forecast data and model configuration for further analysis.
 
+### What This App Does
+
+The Forecast App utilizes the **Prophet** forecasting system, developed by Facebook's Core Data Science team. Here's what you can do:
+
+1. Upload your time series data
+2. Configure various forecasting parameters
+3. Generate predictions for future time periods
+4. Visualize the results
+5. Evaluate the model's performance
+6. Export the results for further analysis
+
+
 ## Installation and Demo
 
 You can view a live demo of this application on **Hugging Face Spaces** without setting it up locally:
