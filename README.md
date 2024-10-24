@@ -4,7 +4,7 @@ This repository contains a **Forecast Application** built using **Streamlit**, *
 
 ## Table of Contents
 - [Features](#features)
-- [Installation](#InstallationandDemo)
+- [Installation](##installation)
 - [Usage](#usage)
   - [Step 1: Data Loading](#step-1-data-loading)
   - [Step 2: Parameter Configuration](#step-2-parameter-configuration)
@@ -37,7 +37,7 @@ The Forecast App utilizes the **Prophet** forecasting system, developed by Faceb
 6. Export the results for further analysis
 
 
-## Installation and Demo
+## Installation 
 
 You can view a live demo of this application on **Hugging Face Spaces** without setting it up locally:
 
