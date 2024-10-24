@@ -40,3 +40,85 @@ Make sure you have Python 3.x installed on your machine.
 ```bash
 git clone https://github.com/your-username/forecast-app.git
 cd forecast-app
+
+
+
+
+## Usage
+
+### Step 1: Data Loading
+
+Start by uploading your time series CSV file. You will select the date column and the value column (for the metric you're forecasting). 
+
+![Intro](./artifacts/intro.png)
+
+- The app will display a preview of the available columns for easy selection.
+
+![Intro Part 2](./artifacts/intro%202.png)
+
+### Step 2: Data Visualization
+
+Once the data is uploaded and the columns are selected, you can view the data through an interactive chart and a statistical description of the dataset.
+
+![Forecast Data](./artifacts/forecast%201.png)
+
+- The chart allows you to visually confirm the trend of the data before moving to the next steps.
+
+![Data Chart and Description](./artifacts/forecast%20data.png)
+
+### Step 3: Parameter Configuration
+
+Configure the parameters to control the forecast:
+- Select the forecast horizon (how far into the future you want to predict).
+- Set the seasonality mode (additive or multiplicative).
+- Choose a linear or logistic growth model.
+- Toggle options for daily, weekly, monthly, and yearly seasonalities.
+- Add holiday effects based on your country.
+
+![Parameter Configuration](./artifacts/parameter%20configuration.png)
+
+### Step 4: Model Fitting and Forecasting
+
+Click **"Initialize and Fit Model"** to train the Prophet model on your data. Once trained, click **"Generate Forecast"** to predict future values.
+
+- After the forecast is generated, you can view a plot of the forecast along with confidence intervals.
+
+![Forecast Actual](./artifacts/forecast%20actual.png)
+
+- The forecast components, including overall trend, seasonal patterns, and holidays, will be displayed.
+
+![Forecast Components](./artifacts/forecast%20components.png)
+
+### Step 5: Change Points in Trend
+
+The app highlights important change points in the trend. These change points mark significant shifts in the data's trajectory, helping to fine-tune the model.
+
+![Change Points in Trend](./artifacts/changepoints%20in%20trend.png)
+
+### Step 6: Model Validation
+
+You can validate the model by performing cross-validation. This process compares the predicted values against actual values in unseen data and computes various error metrics (e.g., RMSE, MAE, MAPE).
+
+![Model Validation](./artifacts/model%20validation.png)
+
+### Step 7: Performance Metrics
+
+Once cross-validation is complete, the performance metrics are shown in a table. These metrics help to assess how well the model is performing.
+
+![Performance Metrics](./artifacts/performance%20metrics.png)
+
+### Step 8: Hyperparameter Tuning
+
+To further improve the forecast, the app includes an option for hyperparameter tuning. It evaluates different combinations of key parameters (e.g., changepoint prior scale and seasonality prior scale) to minimize the error metrics.
+
+![Tuning Results](./artifacts/tunning%20result.png)
+
+### Step 9: Export Results
+
+After completing your analysis, you can export both the forecast data and the model configuration. The results are available for download as CSV files, allowing for further exploration or sharing.
+
+![Export Options](./artifacts/exports.png)
+
+## Conclusion
+
+This step-by-step guide provides an overview of how to use the Forecast Application. With interactive visualizations, configurable forecasting options, model evaluation, and export capabilities, this tool makes forecasting accessible and user-friendly for a wide range of time series applications.
