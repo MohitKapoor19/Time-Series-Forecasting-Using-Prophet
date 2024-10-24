@@ -45,7 +45,7 @@ You can view a live demo of this application on **Hugging Face Spaces** without 
 
 If you'd like to run this application locally, follow the instructions below.
 
-### Run Locally Using Docker
+### Run Locally
 
 #### Prerequisites
 
@@ -56,10 +56,11 @@ Ensure you have **Docker** installed on your machine. If not, you can download a
 ```bash
 git clone https://github.com/your-username/forecast-app.git
 cd forecast-app
-conda create -p forecast_env
-pip install -r requiretments.txt
-streamlit run final_demo_multi_page.py
+docker build -t forecast-app
+docker run -p 7860:7860 forecast-app
 ```
+**Check app the running at this url** http://localhost:7860/
+
 ## Usage
 
 ### Step 1: Data Loading
