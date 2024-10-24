@@ -47,7 +47,7 @@ cd forecast-app
 conda create -p forecast_env
 pip install -r requiretments.txt
 streamlit run final_demo_multi_page.py
-
+```
 ## Usage
 
 ### Step 1: Data Loading
