@@ -25,21 +25,28 @@ This repository contains a **Forecast Application** built using **Streamlit**, *
 - **Hyperparameter Tuning**: Automatically optimize model parameters for better accuracy.
 - **Export Capabilities**: Export the forecast data and model configuration for further analysis.
 
-## Installation
+## Installation and Demo
 
-To run this application locally, follow the instructions below.
+You can view a live demo of this application on **Hugging Face Spaces** without setting it up locally:
 
-### Prerequisites
+[Forecast Application on Hugging Face](https://huggingface.co/spaces/Mohit-1963/Forecast_application)
 
-Make sure you have Python 3.x installed on your machine.
+If you'd like to run this application locally, follow the instructions below.
+
+### Run Locally Using Docker
+
+#### Prerequisites
+
+Ensure you have **Docker** installed on your machine. If not, you can download and install it from [here](https://www.docker.com/get-started).
 
 ### Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/forecast-app.git
 cd forecast-app
-```
-
+conda create -p forecast_env
+pip install -r requiretments.txt
+streamlit run final_demo_multi_page.py
 
 ## Usage
 
