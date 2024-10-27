@@ -1,65 +1,24 @@
-import sys
-import warnings
-
-def patch_numpy():
-    print("Attempting to patch NumPy...")
-    import numpy as np
-    if not hasattr(np, 'float_'):
-        np.float_ = np.float64
-    print("NumPy patch attempt completed.")
-
-def patch_prophet():
-    print("Attempting to patch Prophet...")
-    import prophet.forecaster
-    import numpy as np
-    prophet.forecaster.np.float_ = np.float64
-    print("Prophet patch attempt completed.")
-
-# Patch NumPy first
-patch_numpy()
-
-# Then patch Prophet
-patch_prophet()
-
-# Now try to import Prophet
-try:
-    from prophet import Prophet
-    from prophet.plot import add_changepoints_to_plot
-    from prophet.diagnostics import cross_validation, performance_metrics
-    from prophet.plot import plot_cross_validation_metric
-    from prophet.serialize import model_to_json, model_from_json
-    print("Prophet successfully imported.")
-except ImportError as e:
-    print(f"Failed to import Prophet. Error: {e}")
-    sys.exit(1)
-
-# Suppress warnings
-warnings.filterwarnings("ignore")
-
-# Rest of your imports
 import streamlit as st
 import pandas as pd
 import numpy as np
 import itertools
+from prophet import Prophet
+from prophet.plot import add_changepoints_to_plot
+from prophet.diagnostics import cross_validation, performance_metrics
+from prophet.plot import plot_cross_validation_metric
 import json
+from prophet.serialize import model_to_json, model_from_json
 import holidays
 import altair as alt
-
-# Import Plotly
 import plotly.graph_objs as go
 import plotly.figure_factory as ff
-
 import base64
 from datetime import datetime
 import concurrent.futures
 import time
+import warnings
 
-print("All libraries imported successfully.")
-
-
-
-
-
+warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="Forecast App", page_icon="🔮", layout="wide")
 
@@ -278,7 +237,7 @@ def show_application_page():
             st.write('Prophet uses by default a linear growth model.')
             st.markdown("""For more information check the [documentation](https://facebook.github.io/prophet/docs/saturating_forecasts.html#forecasting-growth)""")
 
-            growth = st.radio(label='Growth model', options=['linear', "logistic"]) 
+            growth = st.radio(label='Growth model', options=['linear']) 
 
             if growth == 'linear':
                 growth_settings = {
@@ -350,7 +309,7 @@ def show_application_page():
                 if len(growth_settings) == 2:
                     with st.spinner('⏳ Fitting the model...'):
                         try:
-                            m = Prophet(seasonality_mode=seasonality,
+                            m = Prophet(seasonality_mode=seasonality, 
                                         daily_seasonality=daily,
                                         weekly_seasonality=weekly,
                                         yearly_seasonality=yearly,
@@ -634,7 +593,6 @@ def show_application_page():
 
 
 
-
     # Initialize session state variables
     if 'model' not in st.session_state:
         st.session_state.model = None
@@ -647,4 +605,7 @@ if st.session_state.page == "Application":
     show_application_page()
 elif st.session_state.page == "About":
     show_about_page()
-     
+
+
+
+
